@@ -1,0 +1,199 @@
+from pathlib import Path
+
+import base64
+
+img_path = Path("/mnt/data/16A357B2-90BA-4721-A069-4B1BFE54B703.jpeg")
+
+b64 = base64.b64encode(img_path.read_bytes()).decode("utf-8")
+
+html = f"""<!DOCTYPE html>
+
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RAPTOR Herbal Roll-On</title>
+
+<style>
+
+*{{margin:0;padding:0;box-sizing:border-box;font-family:Arial,'Tahoma',sans-serif}}
+
+body{{background:#07130d;color:#fff;overflow-x:hidden}}
+
+.hero{{
+
+min-height:100vh;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+gap:40px;
+
+padding:60px 8%;
+
+background:
+
+radial-gradient(circle at 80% 20%,rgba(44,150,90,.35),transparent 35%),
+
+linear-gradient(135deg,#07130d,#102418 55%,#0b160f);
+
+}}
+
+.badge{{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:10px 18px;border-radius:999px;color:#d7f7df;margin-bottom:24px}}
+
+h1{{font-size:70px;line-height:.95;font-weight:900;letter-spacing:-2px;margin-bottom:24px}}
+
+h1 span{{color:#d8c46a}}
+
+.desc{{font-size:20px;line-height:1.7;color:#d7e6d9;max-width:560px;margin-bottom:34px}}
+
+.buttons{{display:flex;gap:14px;flex-wrap:wrap}}
+
+.btn{{display:inline-block;text-decoration:none;padding:16px 30px;border-radius:999px;font-weight:800}}
+
+.primary{{background:#d8c46a;color:#102418}}
+
+.secondary{{border:1px solid rgba(255,255,255,.25);color:#fff}}
+
+.product-wrap{{position:relative;display:flex;justify-content:center;align-items:center}}
+
+.glow{{position:absolute;width:420px;height:420px;background:#34d399;border-radius:50%;filter:blur(120px);opacity:.22}}
+
+.product-img{{position:relative;width:100%;max-width:560px;border-radius:32px;box-shadow:0 35px 90px rgba(0,0,0,.45);animation:float 4s ease-in-out infinite}}
+
+@keyframes float{{0%,100%{{transform:translateY(0)}}50%{{transform:translateY(-12px)}}}}
+
+.section{{padding:90px 8%;background:#fff;color:#102418}}
+
+.section h2{{font-size:44px;margin-bottom:28px;font-weight:900}}
+
+.cards{{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}}
+
+.card{{background:#f3f7f1;border-radius:28px;padding:30px;border:1px solid #dbe8d9}}
+
+.card h3{{font-size:24px;margin-bottom:12px}}
+
+.card p{{color:#405347;line-height:1.65}}
+
+.cta{{padding:80px 8%;background:#102418;text-align:center}}
+
+.cta h2{{font-size:48px;margin-bottom:18px}}
+
+.cta p{{color:#d7e6d9;margin-bottom:28px}}
+
+@media(max-width:900px){{
+
+.hero{{grid-template-columns:1fr;padding:40px 22px;text-align:left}}
+
+h1{{font-size:48px}}
+
+.cards{{grid-template-columns:1fr}}
+
+.product-img{{max-width:100%}}
+
+}}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+  <div>
+
+    <div class="badge">RAPTOR Sport Herb Series</div>
+
+    <h1>RAPTOR<br><span>HERBAL ROLL-ON</span></h1>
+
+    <p class="desc">
+
+      แร็พเตอร์ สปอร์ตเฮิร์บ โรลออนสมุนไพร ภาพลักษณ์สปอร์ตพรีเมี่ยม
+
+      เหมาะสำหรับคนออกกำลังกาย นักกีฬา และคนที่ต้องการความรู้สึกผ่อนคลายหลังใช้งานร่างกาย
+
+    </p>
+
+    <div class="buttons">
+
+      <a href="#" class="btn primary">สั่งซื้อเลย</a>
+
+      <a href="#" class="btn secondary">ดูรายละเอียดสินค้า</a>
+
+    </div>
+
+  </div>
+
+  <div class="product-wrap">
+
+    <div class="glow"></div>
+
+    <img class="product-img" src="data:image/jpeg;base64,{b64}" alt="RAPTOR Herbal Roll-On">
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2>ทำไมต้อง RAPTOR</h2>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <h3>Sport Premium Look</h3>
+
+      <p>ดีไซน์แบรนด์ให้ดูพรีเมี่ยม เหมาะกับตลาดกีฬา ฟิตเนส และไลฟ์สไตล์สุขภาพ</p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Herbal Inspired</h3>
+
+      <p>ภาพลักษณ์สมุนไพรธรรมชาติ ใช้งานง่าย พกพาสะดวก เหมาะกับชีวิตประจำวัน</p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Online Ready</h3>
+
+      <p>หน้าเว็บเหมาะสำหรับยิงแอด ส่งลูกค้าจาก TikTok, Facebook หรือ Shopee เข้ามาดูแบรนด์</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="cta">
+
+  <h2>พร้อมยกระดับ RAPTOR</h2>
+
+  <p>ใช้หน้าเว็บนี้เป็น Landing Page สำหรับสร้างความน่าเชื่อถือและปิดการขาย</p>
+
+  <a href="#" class="btn primary">เพิ่มปุ่มสั่งซื้อจริง</a>
+
+</section>
+
+</body>
+
+</html>
+
+"""
+
+out = Path("/mnt/data/raptor-herbal-rollon-index.html")
+
+out.write_text(html, encoding="utf-8")
+
+print(f"สร้างไฟล์สำเร็จ: {out}")

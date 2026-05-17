@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAPTOR Herbal Roll-On</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#08120d;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+min-height:100vh;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:60px;
+padding:60px 8%;
+background:
+radial-gradient(circle at top right,#1c7c54 0%,transparent 35%),
+radial-gradient(circle at bottom left,#34d399 0%,transparent 30%),
+#08120d;
+}
+
+@media(max-width:900px){
+.hero{
+grid-template-columns:1fr;
+padding:40px 20px;
+}
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+border-radius:999px;
+background:rgba(255,255,255,0.1);
+margin-bottom:24px;
+font-size:14px;
+backdrop-filter:blur(10px);
+color:#d1fae5;
+}
+
+h1{
+font-size:72px;
+line-height:0.95;
+font-weight:900;
+margin-bottom:24px;
+}
+
+@media(max-width:900px){
+h1{
+font-size:48px;
+}
+}
+
+.gold{
+color:#d6c06d;
+}
+
+.desc{
+font-size:20px;
+line-height:1.7;
+color:#d1d5db;
+margin-bottom:35px;
+max-width:580px;
+}
+
+.btns{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 32px;
+border-radius:999px;
+font-weight:bold;
+text-decoration:none;
+display:inline-block;
+transition:0.3s;
+}
+
+.btn-primary{
+background:#d6c06d;
+color:#08120d;
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+}
+
+.btn-outline{
+border:1px solid rgba(255,255,255,0.2);
+color:white;
+}
+
+.btn-outline:hover{
+background:rgba(255,255,255,0.08);
+}
+
+.product-wrap{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.glow{
+position:absolute;
+width:420px;
+height:420px;
+background:#34d399;
+border-radius:50%;
+filter:blur(120px);
+opacity:0.22;
+}
+
+.hero-product{
+position:relative;
+width:100%;
+max-width:540px;
+border-radius:30px;
+box-shadow:0 35px 80px rgba(0,0,0,0.45);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-12px);
+}
+100%{
+transform:translateY(0px);
+}
+}
+
+.section{
+padding:100px 8%;
+background:white;
+color:#08120d;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title p{
+letter-spacing:3px;
+font-weight:bold;
+color:#1c7c54;
+margin-bottom:10px;
+}
+
+.section-title h2{
+font-size:48px;
+font-weight:900;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:#f3f4f6;
+padding:35px;
+border-radius:28px;
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:16px;
+}
+
+.card p{
+line-height:1.7;
+color:#374151;
+}
+
+.cta{
+padding:100px 8%;
+background:#08120d;
+text-align:center;
+}
+
+.cta h2{
+font-size:54px;
+margin-bottom:18px;
+}
+
+.cta p{
+color:#d1d5db;
+margin-bottom:30px;
+font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div>
+
+<div class="badge">
+RAPTOR Sport Herb Series
+</div>
+
+<h1>
+RAPTOR<br>
+<span class="gold">HERBAL ROLL-ON</span>
+</h1>
+
+<p class="desc">
+แร็พเตอร์ สปอร์ตเฮิร์บ โรลออนสมุนไพร
+ภาพลักษณ์สปอร์ตพรีเมี่ยม เหมาะสำหรับคนออกกำลังกาย
+นักกีฬา และคนที่ต้องการความรู้สึกผ่อนคลายหลังใช้งานร่างกาย
+</p>
+
+<div class="btns">
+<a href="#" class="btn btn-primary">
+สั่งซื้อเลย
+</a>
+
+<a href="#" class="btn btn-outline">
+ดูรายละเอียดสินค้า
+</a>
+</div>
+
+</div>
+
+<div class="product-wrap">
+
+<div class="glow"></div>
+
+<img
+src="E8E82679-4BB8-4F43-A379-1713358C2DD7.png"
+class="hero-product"
+>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+<p>WHY RAPTOR</p>
+<h2>ทำไมต้อง RAPTOR</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Sport Premium Look</h3>
+<p>
+ดีไซน์แบรนด์ให้ดูพรีเมี่ยม เหมาะกับตลาดกีฬา
+ฟิตเนส และไลฟ์สไตล์สุขภาพ
+</p>
+</div>
+
+<div class="card">
+<h3>Herbal Inspired</h3>
+<p>
+ภาพลักษณ์สมุนไพรธรรมชาติ ใช้งานง่าย
+พกพาสะดวก เหมาะกับชีวิตประจำวัน
+</p>
+</div>
+
+<div class="card">
+<h3>Online Ready</h3>
+<p>
+หน้าเว็บเหมาะสำหรับยิงแอด ส่งลูกค้าจาก TikTok,
+Facebook หรือ Shopee เข้ามาดูแบรนด์
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>
+พร้อมยกระดับ RAPTOR
+</h2>
+
+<p>
+ใช้เว็บนี้เป็น Landing Page สำหรับสร้างแบรนด์
+และปิดการขายออนไลน์
+</p>
+
+<a href="#" class="btn btn-primary">
+เริ่มขายทันที
+</a>
+
+</section>
+
+</body>
+</html>

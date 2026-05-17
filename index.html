@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>RAPTOR ICE COLD SPRAY</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+background:
+radial-gradient(circle at top right,#1d4ed8 0%,transparent 30%),
+radial-gradient(circle at bottom left,#0ea5e9 0%,transparent 30%),
+#050816;
+}
+
+.container{
+max-width:1200px;
+width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+@media(max-width:900px){
+.container{
+grid-template-columns:1fr;
+}
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+border-radius:999px;
+background:rgba(255,255,255,0.1);
+margin-bottom:20px;
+font-size:14px;
+backdrop-filter:blur(10px);
+}
+
+h1{
+font-size:72px;
+line-height:0.95;
+font-weight:900;
+margin-bottom:25px;
+}
+
+@media(max-width:900px){
+h1{
+font-size:48px;
+}
+}
+
+.blue{
+color:#7dd3fc;
+}
+
+.desc{
+font-size:20px;
+color:#cbd5e1;
+line-height:1.7;
+margin-bottom:35px;
+}
+
+.btns{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 32px;
+border-radius:999px;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
+display:inline-block;
+}
+
+.btn-primary{
+background:#2563eb;
+color:white;
+}
+
+.btn-primary:hover{
+background:#3b82f6;
+transform:translateY(-2px);
+}
+
+.btn-outline{
+border:1px solid rgba(255,255,255,0.2);
+color:white;
+}
+
+.btn-outline:hover{
+background:rgba(255,255,255,0.08);
+}
+
+.stats{
+margin-top:35px;
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+color:#cbd5e1;
+}
+
+.can-wrap{
+display:flex;
+justify-content:center;
+position:relative;
+}
+
+.glow{
+position:absolute;
+width:380px;
+height:380px;
+background:#2563eb;
+filter:blur(120px);
+opacity:0.35;
+border-radius:50%;
+}
+
+.can{
+position:relative;
+width:280px;
+height:560px;
+border-radius:40px;
+background:linear-gradient(180deg,#1e3a8a,#020617);
+border:1px solid rgba(255,255,255,0.15);
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+padding:35px;
+transform:rotate(-6deg);
+box-shadow:0 20px 80px rgba(37,99,235,0.35);
+}
+
+.can-top{
+display:flex;
+justify-content:space-between;
+font-size:13px;
+color:#bfdbfe;
+}
+
+.logo{
+text-align:center;
+}
+
+.logo-r{
+font-size:80px;
+font-weight:900;
+}
+
+.logo-text{
+font-size:48px;
+font-weight:900;
+letter-spacing:4px;
+}
+
+.ice{
+margin-top:10px;
+font-size:15px;
+letter-spacing:5px;
+color:#7dd3fc;
+}
+
+.cool-box{
+background:rgba(255,255,255,0.08);
+border-radius:24px;
+padding:25px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.cool{
+font-size:40px;
+font-weight:900;
+color:#7dd3fc;
+}
+
+.section{
+padding:100px 20px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title p{
+color:#7dd3fc;
+letter-spacing:3px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.section-title h2{
+font-size:52px;
+font-weight:900;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+padding:35px;
+border-radius:30px;
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:15px;
+}
+
+.card p{
+color:#cbd5e1;
+line-height:1.7;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.product{
+background:white;
+color:black;
+border-radius:30px;
+overflow:hidden;
+}
+
+.product-top{
+height:220px;
+background:linear-gradient(180deg,#020617,#1d4ed8);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.mini-can{
+width:80px;
+height:150px;
+border-radius:20px;
+background:rgba(255,255,255,0.15);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:42px;
+font-weight:900;
+color:white;
+}
+
+.product-body{
+padding:30px;
+}
+
+.product-body h3{
+font-size:28px;
+margin:10px 0;
+}
+
+.price{
+font-size:36px;
+font-weight:900;
+margin-top:20px;
+}
+
+.footer-cta{
+padding:100px 20px;
+}
+
+.footer-box{
+max-width:1200px;
+margin:auto;
+background:#020617;
+border-radius:40px;
+padding:60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:30px;
+position:relative;
+overflow:hidden;
+}
+
+.footer-box::before{
+content:'';
+position:absolute;
+width:400px;
+height:400px;
+background:#2563eb;
+filter:blur(150px);
+right:-100px;
+top:-100px;
+opacity:0.3;
+}
+
+.footer-box h2{
+font-size:54px;
+font-weight:900;
+position:relative;
+z-index:1;
+}
+
+.footer-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+position:relative;
+z-index:1;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<div class="container">
+
+<div>
+<div class="badge">
+Premium Cooling Spray For Active Lifestyle
+</div>
+
+<h1>
+COOL DOWN<br>
+<span class="blue">LIKE AN ATHLETE</span>
+</h1>
+
+<p class="desc">
+RAPTOR ICE COLD SPRAY สเปรย์เย็นลุคสปอร์ตพรีเมี่ยม
+สำหรับนักกีฬา ฟิตเนส ฟุตบอล และคนที่ใช้งานกล้ามเนื้อหนัก
+</p>
+
+<div class="btns">
+<a href="#" class="btn btn-primary">ซื้อเลย ฿129</a>
+<a href="#" class="btn btn-outline">ดูวิดีโอสินค้า</a>
+</div>
+
+<div class="stats">
+<span>⭐ 4.9/5 รีวิวลูกค้า</span>
+<span>🚚 ส่งไวทั่วไทย</span>
+<span>🏃 Sport Lifestyle</span>
+</div>
+</div>
+
+<div class="can-wrap">
+<div class="glow"></div>
+
+<div class="can">
+
+<div class="can-top">
+<span>150 ML</span>
+<span>ICE COLD</span>
+</div>
+
+<div class="logo">
+<div class="logo-r">R</div>
+<div class="logo-text">RAPTOR</div>
+<div class="ice">ICE COLD SPRAY</div>
+</div>
+
+<div class="cool-box">
+<div class="cool">- COOL -</div>
+<p>SPORT PERFORMANCE SERIES</p>
+</div>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+
+<div class="section-title">
+<p>WHY RAPTOR</p>
+<h2>ออกแบบมาเพื่อคนที่ไม่หยุดเคลื่อนไหว</h2>
+</div>
+
+<div class="features">
+
+<div class="card">
+<h3>Instant Cooling Feel</h3>
+<p>
+ให้ความรู้สึกเย็นสดชื่นหลังออกกำลังกาย
+หรือหลังใช้งานกล้ามเนื้อหนัก
+</p>
+</div>
+
+<div class="card">
+<h3>Sport Ready</h3>
+<p>
+ออกแบบภาพลักษณ์สำหรับนักกีฬา
+ฟิตเนส ฟุตบอล วิ่ง และกิจกรรมกลางแจ้ง
+</p>
+</div>
+
+<div class="card">
+<h3>Premium Look</h3>
+<p>
+แบรนด์สปอร์ตพรีเมี่ยม ดูน่าเชื่อถือ
+เหมาะกับการขายออนไลน์และหน้าร้าน
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+<p>SHOP RAPTOR</p>
+<h2>เลือกแพ็กที่ใช่สำหรับคุณ</h2>
+</div>
+
+<div class="products">
+
+<div class="product">
+<div class="product-top">
+<div class="mini-can">R</div>
+</div>
+
+<div class="product-body">
+<p>150 ML</p>
+<h3>RAPTOR ICE COLD SPRAY</h3>
+<div class="price">฿129</div>
+</div>
+</div>
+
+<div class="product">
+<div class="product-top">
+<div class="mini-can">R</div>
+</div>
+
+<div class="product-body">
+<p>3 x 150 ML</p>
+<h3>RAPTOR ICE 3 PACK</h3>
+<div class="price">฿349</div>
+</div>
+</div>
+
+<div class="product">
+<div class="product-top">
+<div class="mini-can">R</div>
+</div>
+
+<div class="product-body">
+<p>SPORT SET</p>
+<h3>RAPTOR SPORT KIT</h3>
+<div class="price">฿249</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="footer-cta">
+
+<div class="footer-box">
+
+<div>
+<h2>
+READY TO<br>
+COOL DOWN?
+</h2>
+</div>
+
+<div class="footer-buttons">
+<a href="#" class="btn btn-primary">สั่งซื้อทันที</a>
+<a href="#" class="btn btn-outline">ดูโปรโมชั่น</a>
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

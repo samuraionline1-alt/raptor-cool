@@ -436,10 +436,11 @@ font-size:18px;
 <li>เทคนิคฟื้นฟูกล้ามเนื้อหลังซ้อม</li>
 </ul>
 </div>
-<form class="signup-form">
-<input type="text" placeholder="ชื่อ - นามสกุล" required>
-<input type="email" placeholder="อีเมล" required>
-<input type="tel" placeholder="เบอร์โทรศัพท์" required>
+<form class="signup-form" action="https://formspree.io/f/xjgzvoqy" method="POST">
+<input type="hidden" name="_subject" value="RAPTOR Club signup from landing page">
+<input type="text" name="name" placeholder="ชื่อ - นามสกุล" autocomplete="name" required>
+<input type="email" name="email" placeholder="อีเมล" autocomplete="email" required>
+<input type="tel" name="phone" placeholder="เบอร์โทรศัพท์" autocomplete="tel" required>
 <button type="submit" class="btn btn-primary">สมัครสมาชิก</button>
 </form>
 </div>

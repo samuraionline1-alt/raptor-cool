@@ -6,7 +6,6 @@
 <title>RAPTOR Herbal Roll-On</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -18,6 +17,7 @@ body{
 background:#08120d;
 color:white;
 overflow-x:hidden;
+line-height:1.5;
 }
 
 .hero{
@@ -36,7 +36,8 @@ radial-gradient(circle at bottom left,#34d399 0%,transparent 30%),
 @media(max-width:900px){
 .hero{
 grid-template-columns:1fr;
-padding:40px 20px;
+padding:40px 20px 30px;
+gap:28px;
 }
 }
 
@@ -60,7 +61,7 @@ margin-bottom:24px;
 
 @media(max-width:900px){
 h1{
-font-size:48px;
+font-size:44px;
 }
 }
 
@@ -89,6 +90,7 @@ font-weight:bold;
 text-decoration:none;
 display:inline-block;
 transition:0.3s;
+text-align:center;
 }
 
 .btn-primary{
@@ -136,15 +138,9 @@ animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float{
-0%{
-transform:translateY(0px);
-}
-50%{
-transform:translateY(-12px);
-}
-100%{
-transform:translateY(0px);
-}
+0%{transform:translateY(0px);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0px);}
 }
 
 .section{
@@ -194,6 +190,66 @@ line-height:1.7;
 color:#374151;
 }
 
+.member-section{
+padding:90px 8%;
+background:linear-gradient(135deg,#0b1a12 0%,#133c2a 100%);
+}
+
+.member-card{
+max-width:980px;
+margin:0 auto;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:28px;
+padding:40px;
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:28px;
+align-items:center;
+}
+
+.member-card h2{
+font-size:42px;
+margin-bottom:14px;
+}
+
+.member-card p{
+color:#d1d5db;
+margin-bottom:18px;
+}
+
+.member-list{
+list-style:none;
+display:grid;
+gap:10px;
+color:#e5e7eb;
+}
+
+.member-list li::before{
+content:"✓ ";
+color:#86efac;
+font-weight:bold;
+}
+
+.signup-form{
+display:grid;
+gap:12px;
+}
+
+.signup-form input{
+padding:13px 14px;
+border-radius:12px;
+border:none;
+outline:none;
+font-size:16px;
+}
+
+.signup-form button{
+border:none;
+cursor:pointer;
+font-size:16px;
+}
+
 .cta{
 padding:100px 8%;
 background:#08120d;
@@ -211,108 +267,87 @@ margin-bottom:30px;
 font-size:18px;
 }
 
+@media(max-width:900px){
+.desc{font-size:18px;}
+.section,.member-section,.cta{padding:70px 20px;}
+.section-title{margin-bottom:34px;}
+.section-title h2,.member-card h2,.cta h2{font-size:34px;}
+.card{padding:24px;}
+.member-card{grid-template-columns:1fr;padding:24px;}
+.btn{width:100%;}
+.btns{gap:12px;}
+.hero-product{max-width:420px;border-radius:22px;}
+.glow{width:280px;height:280px;filter:blur(90px);}
+}
 </style>
 </head>
 
 <body>
-
 <section class="hero">
-
 <div>
-
-<div class="badge">
-RAPTOR Sport Herb Series
-</div>
-
-<h1>
-RAPTOR<br>
-<span class="gold">HERBAL ROLL-ON</span>
-</h1>
-
+<div class="badge">RAPTOR Sport Herb Series</div>
+<h1>RAPTOR<br><span class="gold">HERBAL ROLL-ON</span></h1>
 <p class="desc">
-แร็พเตอร์ สปอร์ตเฮิร์บ โรลออนสมุนไพร
-ภาพลักษณ์สปอร์ตพรีเมี่ยม เหมาะสำหรับคนออกกำลังกาย
-นักกีฬา และคนที่ต้องการความรู้สึกผ่อนคลายหลังใช้งานร่างกาย
+แร็พเตอร์ สปอร์ตเฮิร์บ โรลออนสมุนไพรระดับพรีเมี่ยม
+สำหรับสายสปอร์ตที่ต้องการความสดชื่น ผ่อนคลาย และพร้อมลุยทุกกิจกรรม
 </p>
-
 <div class="btns">
-<a href="#" class="btn btn-primary">
-สั่งซื้อเลย
-</a>
-
-<a href="#" class="btn btn-outline">
-ดูรายละเอียดสินค้า
-</a>
+<a href="https://lin.ee/X56gq67" target="_blank" rel="noopener noreferrer" class="btn btn-primary">สั่งซื้อเลย</a>
+<a href="#why-raptor" class="btn btn-outline">ดูรายละเอียดสินค้า</a>
 </div>
-
 </div>
 
 <div class="product-wrap">
-
 <div class="glow"></div>
-
-<img
-src="E8E82679-4BB8-4F43-A379-1713358C2DD7.png"
-class="hero-product"
->
-
+<img src="E8E82679-4BB8-4F43-A379-1713358C2DD7.png" class="hero-product" alt="RAPTOR Herbal Roll-On Sport Premium">
 </div>
-
 </section>
 
-<section class="section">
-
+<section class="section" id="why-raptor">
 <div class="section-title">
 <p>WHY RAPTOR</p>
 <h2>ทำไมต้อง RAPTOR</h2>
 </div>
-
 <div class="cards">
-
 <div class="card">
 <h3>Sport Premium Look</h3>
-<p>
-ดีไซน์แบรนด์ให้ดูพรีเมี่ยม เหมาะกับตลาดกีฬา
-ฟิตเนส และไลฟ์สไตล์สุขภาพ
-</p>
+<p>ดีไซน์แบรนด์ให้ดูสปอร์ตพรีเมี่ยม โดดเด่นทั้งหน้าร้านและออนไลน์ เหมาะกับสายฟิตเนสและสุขภาพ</p>
 </div>
-
 <div class="card">
-<h3>Herbal Inspired</h3>
-<p>
-ภาพลักษณ์สมุนไพรธรรมชาติ ใช้งานง่าย
-พกพาสะดวก เหมาะกับชีวิตประจำวัน
-</p>
+<h3>Herbal Cooling Relief</h3>
+<p>สัมผัสเย็นสดชื่นจากสมุนไพร ใช้ง่ายด้วยหัวโรลออน ช่วยผ่อนคลายหลังออกกำลังกายหรือกิจกรรมหนัก</p>
 </div>
-
 <div class="card">
-<h3>Online Ready</h3>
-<p>
-หน้าเว็บเหมาะสำหรับยิงแอด ส่งลูกค้าจาก TikTok,
-Facebook หรือ Shopee เข้ามาดูแบรนด์
-</p>
+<h3>Ready to Scale</h3>
+<p>พร้อมต่อยอดการขายผ่าน TikTok, Facebook และ Marketplace พร้อมภาพลักษณ์แบรนด์ที่น่าเชื่อถือ</p>
 </div>
-
 </div>
+</section>
 
+<section class="member-section" id="member">
+<div class="member-card">
+<div>
+<h2>สมัครสมาชิก RAPTOR Club</h2>
+<p>รับโปรสมาชิกก่อนใคร โค้ดส่วนลดพิเศษ และคอนเทนต์ดูแลร่างกายสำหรับสายสปอร์ตทุกสัปดาห์</p>
+<ul class="member-list">
+<li>ส่วนลดพิเศษสำหรับการสั่งซื้อครั้งแรก</li>
+<li>แจ้งโปร Flash Sale แบบทันที</li>
+<li>เทคนิคฟื้นฟูกล้ามเนื้อหลังซ้อม</li>
+</ul>
+</div>
+<form class="signup-form">
+<input type="text" placeholder="ชื่อ - นามสกุล" required>
+<input type="email" placeholder="อีเมล" required>
+<input type="tel" placeholder="เบอร์โทรศัพท์" required>
+<button type="submit" class="btn btn-primary">สมัครสมาชิก</button>
+</form>
+</div>
 </section>
 
 <section class="cta">
-
-<h2>
-พร้อมยกระดับ RAPTOR
-</h2>
-
-<p>
-ใช้เว็บนี้เป็น Landing Page สำหรับสร้างแบรนด์
-และปิดการขายออนไลน์
-</p>
-
-<a href="#" class="btn btn-primary">
-เริ่มขายทันที
-</a>
-
+<h2>พร้อมลุยทุกกิจกรรมกับ RAPTOR</h2>
+<p>สั่งซื้อ RAPTOR Herbal Roll-On วันนี้ เพื่อสัมผัสความสดชื่นแบบสปอร์ตพรีเมี่ยม</p>
+<a href="https://lin.ee/X56gq67" target="_blank" rel="noopener noreferrer" class="btn btn-primary">สั่งซื้อเลย</a>
 </section>
-
 </body>
 </html>

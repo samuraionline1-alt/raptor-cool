@@ -29,17 +29,17 @@ body{background:#08120d;color:white;overflow-x:hidden;line-height:1.5;}
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;padding:60px 8%;background:radial-gradient(circle at top right,#1c7c54 0%,transparent 35%),radial-gradient(circle at bottom left,#34d399 0%,transparent 30%),#08120d;}
 .badge{display:inline-block;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.1);margin-bottom:24px;font-size:14px;backdrop-filter:blur(10px);color:#d1fae5;}
 h1{font-size:72px;line-height:0.95;font-weight:900;margin-bottom:24px;}.gold{color:#d6c06d;}.desc{font-size:20px;line-height:1.7;color:#d1d5db;margin-bottom:35px;max-width:580px;}.btns{display:flex;gap:15px;flex-wrap:wrap;}.btn{padding:16px 32px;border-radius:999px;font-weight:bold;text-decoration:none;display:inline-block;transition:0.3s;text-align:center;}.btn-primary{background:#d6c06d;color:#08120d;}.btn-primary:hover{transform:translateY(-2px);}.btn-outline{border:1px solid rgba(255,255,255,0.2);color:white;}.btn-outline:hover{background:rgba(255,255,255,0.08);}
-.product-wrap{position:relative;display:flex;justify-content:center;align-items:center;perspective:1200px;isolation:isolate;min-height:620px;padding:34px;touch-action:none;user-select:none;cursor:grab;}
+.product-wrap{position:relative;display:flex;justify-content:center;align-items:center;perspective:1200px;isolation:isolate;min-height:620px;padding:34px;touch-action:pan-y;user-select:none;cursor:grab;}
 .product-wrap:active{cursor:grabbing;}
 .product-wrap::before{content:"";position:absolute;inset:28px;border-radius:42px;background:linear-gradient(145deg,rgba(255,255,255,0.18),rgba(255,255,255,0.04));border:1px solid rgba(214,192,109,0.28);box-shadow:0 34px 90px rgba(0,0,0,0.36),inset 0 1px 0 rgba(255,255,255,0.22),inset 0 -28px 70px rgba(0,0,0,0.16);backdrop-filter:blur(16px);transform:rotateY(-8deg) rotateX(5deg);z-index:0;}
 .product-wrap::after{content:"360° TOUCH VIEW";position:absolute;right:54px;bottom:42px;font-size:12px;letter-spacing:3px;font-weight:800;color:rgba(214,192,109,0.78);z-index:3;}
 .glow{position:absolute;width:420px;height:420px;background:#34d399;border-radius:50%;filter:blur(120px);opacity:0.22;z-index:0;}
 .rotate-stage{position:relative;z-index:2;width:min(92%,520px);height:560px;display:flex;align-items:center;justify-content:center;transform-style:preserve-3d;}
-.hero-product{position:relative;z-index:2;display:block;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,0.14),rgba(255,255,255,0.03));padding:18px;box-shadow:0 45px 90px rgba(0,0,0,0.48),0 18px 34px rgba(0,0,0,0.28),0 0 0 1px rgba(255,255,255,0.12),inset 0 1px 0 rgba(255,255,255,0.24);filter:drop-shadow(22px 30px 28px rgba(0,0,0,0.38)) saturate(1.08) contrast(1.04);transform:rotateY(var(--rotateY,-6deg)) rotateX(var(--rotateX,4deg)) rotateZ(var(--rotateZ,0deg)) scaleX(var(--scaleX,1));transition:opacity .18s ease, transform .16s ease, filter .18s ease;}
-.hero-product.is-changing{opacity:.72;filter:blur(.4px) drop-shadow(22px 30px 28px rgba(0,0,0,0.38)) saturate(1.08) contrast(1.04);}
+.hero-product{position:relative;z-index:2;display:block;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,0.14),rgba(255,255,255,0.03));padding:18px;box-shadow:0 45px 90px rgba(0,0,0,0.48),0 18px 34px rgba(0,0,0,0.28),0 0 0 1px rgba(255,255,255,0.12),inset 0 1px 0 rgba(255,255,255,0.24);filter:drop-shadow(22px 30px 28px rgba(0,0,0,0.38)) saturate(1.08) contrast(1.04);transform:translateX(var(--dragX,0px)) rotateY(var(--rotateY,-6deg)) rotateX(var(--rotateX,4deg)) rotateZ(var(--rotateZ,0deg)) scaleX(var(--scaleX,1));transition:opacity .18s ease, transform .14s ease, filter .18s ease;}
+.hero-product.is-changing{opacity:.35;transform:translateX(var(--slideX,0px)) rotateY(var(--rotateY,-6deg)) rotateX(var(--rotateX,4deg)) scale(.96);}
 .rotate-shadow{position:absolute;z-index:1;bottom:24px;width:58%;height:34px;border-radius:50%;background:rgba(0,0,0,.46);filter:blur(18px);transform:rotateX(78deg) translateZ(-30px);}
 .rotate-hint{position:absolute;left:50%;bottom:82px;transform:translateX(-50%);z-index:4;padding:9px 14px;border-radius:999px;background:rgba(8,18,13,.72);border:1px solid rgba(214,192,109,.32);color:#f5e7a6;font-size:13px;font-weight:700;white-space:nowrap;backdrop-filter:blur(10px);pointer-events:none;}
-.rotate-dots{position:absolute;left:50%;bottom:56px;transform:translateX(-50%);z-index:4;display:flex;gap:7px;pointer-events:none;}.rotate-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.28);}.rotate-dots span.active{background:#d6c06d;box-shadow:0 0 16px rgba(214,192,109,.9);}
+.rotate-dots{position:absolute;left:50%;bottom:56px;transform:translateX(-50%);z-index:4;display:flex;gap:7px;pointer-events:none;}.rotate-dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.28);}.rotate-dots span.active{background:#d6c06d;box-shadow:0 0 16px rgba(214,192,109,.9);}
 .section{padding:100px 8%;background:white;color:#08120d;}.section-title{text-align:center;margin-bottom:60px;}.section-title p{letter-spacing:3px;font-weight:bold;color:#1c7c54;margin-bottom:10px;}.section-title h2{font-size:48px;font-weight:900;}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1200px;margin:auto;}.detail-proof{margin:42px auto 0;max-width:1200px;display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:stretch;}.detail-image{background:linear-gradient(145deg,#f8fafc,#e7eef6);border-radius:28px;padding:22px;box-shadow:0 18px 46px rgba(8,18,13,0.12);overflow:hidden;}.detail-image img{width:100%;height:460px;object-fit:contain;object-position:center;border-radius:20px;background:white;box-shadow:inset 0 0 0 1px rgba(8,18,13,0.08);}.trust-card{background:#f8fafc;border:1px solid #e5e7eb;border-radius:28px;padding:28px;display:grid;align-content:start;gap:16px;}.trust-card h3{font-size:28px;}.trust-list{list-style:none;display:grid;gap:12px;color:#1f2937;}.trust-list li{display:flex;gap:10px;align-items:flex-start;line-height:1.65;}.trust-list li::before{content:"✔";color:#15803d;font-weight:700;margin-top:1px;}.review-note{background:#ffffff;border-radius:16px;padding:14px 16px;border:1px solid #d1d5db;font-size:15px;color:#374151;}.card{background:#f3f4f6;padding:35px;border-radius:28px;}.card h3{font-size:28px;margin-bottom:16px;}.card p{line-height:1.7;color:#374151;}.member-section{padding:90px 8%;background:linear-gradient(135deg,#0b1a12 0%,#133c2a 100%);}.member-card{max-width:980px;margin:0 auto;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:28px;padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;}.member-card h2{font-size:42px;margin-bottom:14px;}.member-card p{color:#d1d5db;margin-bottom:18px;}.member-list{list-style:none;display:grid;gap:10px;color:#e5e7eb;}.member-list li::before{content:"✓ ";color:#86efac;font-weight:bold;}.signup-form{display:grid;gap:12px;}.signup-form input{padding:13px 14px;border-radius:12px;border:none;outline:none;font-size:16px;}.signup-form button{border:none;cursor:pointer;font-size:16px;}.cta{padding:100px 8%;background:#08120d;text-align:center;}.cta h2{font-size:54px;margin-bottom:18px;}.cta p{color:#d1d5db;margin-bottom:30px;font-size:18px;}
 @media(max-width:900px){.hero{grid-template-columns:1fr;padding:40px 20px 30px;gap:28px;}h1{font-size:44px;}.desc{font-size:18px;}.section,.member-section,.cta{padding:70px 20px;}.section-title{margin-bottom:34px;}.section-title h2,.member-card h2,.cta h2{font-size:34px;}.card{padding:24px;}.detail-proof{grid-template-columns:1fr;margin-top:24px;}.member-card{grid-template-columns:1fr;padding:24px;}.btn{width:100%;}.btns{gap:12px;}.product-wrap{min-height:430px;padding:18px;}.product-wrap::before{inset:10px;border-radius:28px;transform:rotateY(-4deg) rotateX(3deg);}.product-wrap::after{right:28px;bottom:22px;font-size:10px;letter-spacing:2px;}.rotate-stage{width:min(96%,390px);height:390px;}.hero-product{border-radius:22px;padding:12px;}.glow{width:280px;height:280px;filter:blur(90px);}.detail-image img{height:330px;}.rotate-hint{bottom:62px;font-size:12px;}.rotate-dots{bottom:39px;}}
 </style>
@@ -57,9 +57,9 @@ h1{font-size:72px;line-height:0.95;font-weight:900;margin-bottom:24px;}.gold{col
 <div class="glow"></div>
 <div class="rotate-stage">
 <div class="rotate-shadow"></div>
-<img src="product-front.png" class="hero-product" id="heroProduct" alt="RAPTOR Herbal Roll-On Sport Premium">
+<img src="product-front.png" class="hero-product" id="heroProduct" alt="RAPTOR Herbal Roll-On Sport Premium" draggable="false">
 </div>
-<div class="rotate-hint">ปัดซ้าย-ขวา เพื่อหมุนสินค้า 360°</div>
+<div class="rotate-hint">ปัดซ้าย-ขวา หรือแตะสินค้า เพื่อเปลี่ยนมุม</div>
 <div class="rotate-dots" id="rotateDots"></div>
 </div>
 </section>
@@ -74,33 +74,32 @@ const img=document.getElementById('heroProduct');
 const dotsBox=document.getElementById('rotateDots');
 frames.forEach((src)=>{const preload=new Image();preload.src=src;const dot=document.createElement('span');dotsBox.appendChild(dot);});
 const dots=[...dotsBox.querySelectorAll('span')];
-let dragging=false,startX=0,frame=0,angle=-6,auto=0,changeLock=false;
-function setFrame(next){
-next=((next%frames.length)+frames.length)%frames.length;
-if(next===frame)return;
-frame=next;
+let startX=0,currentX=0,isDown=false,frame=0,angle=-6,auto=0;
+function updateDots(){dots.forEach((d,i)=>d.classList.toggle('active',i===frame));}
+function showFrame(next,dir=1){
+frame=((next%frames.length)+frames.length)%frames.length;
+img.style.setProperty('--slideX',(dir*42)+'px');
 img.classList.add('is-changing');
-window.setTimeout(()=>{img.src=frames[frame];dots.forEach((d,i)=>d.classList.toggle('active',i===frame));},70);
-window.setTimeout(()=>img.classList.remove('is-changing'),180);
+setTimeout(()=>{img.src=frames[frame];updateDots();img.style.setProperty('--dragX','0px');},80);
+setTimeout(()=>img.classList.remove('is-changing'),210);
 }
 function render(){
-const y=angle;
-const x=4+Math.sin(y*Math.PI/180)*2;
-const z=Math.sin(y*Math.PI/90)*1.2;
-const sx=frame===0?1:0.96;
+const base=frame===0?-6:-18;
+const y=isDown?angle:base+Math.sin(auto/40)*4;
 img.style.setProperty('--rotateY',y+'deg');
-img.style.setProperty('--rotateX',x+'deg');
-img.style.setProperty('--rotateZ',z+'deg');
-img.style.setProperty('--scaleX',sx.toFixed(3));
-dots.forEach((d,i)=>d.classList.toggle('active',i===frame));
+img.style.setProperty('--rotateX',(4+Math.sin(y*Math.PI/180)*2)+'deg');
+img.style.setProperty('--rotateZ',(Math.sin(y*Math.PI/90)*1.2)+'deg');
+img.style.setProperty('--scaleX',(frame===0?1:.96));
+if(!isDown)auto+=.24;
+requestAnimationFrame(render);
 }
-function animate(){if(!dragging){auto+=0.22;angle=(frame===0?-6:-18)+Math.sin(auto/45)*5;render();}requestAnimationFrame(animate);}
-function down(e){dragging=true;startX=(e.touches?e.touches[0].clientX:e.clientX);}
-function move(e){if(!dragging)return;e.preventDefault();const x=(e.touches?e.touches[0].clientX:e.clientX);const dx=x-startX;angle+=dx*.35;if(Math.abs(dx)>26&&!changeLock){setFrame(frame+(dx<0?1:-1));changeLock=true;window.setTimeout(()=>changeLock=false,220);}startX=x;render();}
-function up(){dragging=false;}
-wrap.addEventListener('mousedown',down);window.addEventListener('mousemove',move,{passive:false});window.addEventListener('mouseup',up);
-wrap.addEventListener('touchstart',down,{passive:true});wrap.addEventListener('touchmove',move,{passive:false});wrap.addEventListener('touchend',up);
-setFrame(0);render();animate();
+function start(e){isDown=true;startX=(e.touches?e.touches[0].clientX:e.clientX);currentX=startX;angle=frame===0?-6:-18;}
+function move(e){if(!isDown)return;currentX=(e.touches?e.touches[0].clientX:e.clientX);const dx=currentX-startX;img.style.setProperty('--dragX',Math.max(-70,Math.min(70,dx))+'px');angle=(frame===0?-6:-18)+(dx*.18);if(Math.abs(dx)>45){showFrame(frame+(dx<0?1:-1),dx<0?1:-1);isDown=false;}}
+function end(){if(!isDown)return;const dx=currentX-startX;if(Math.abs(dx)<12){showFrame(frame+1,1);}else if(Math.abs(dx)>=25){showFrame(frame+(dx<0?1:-1),dx<0?1:-1);}else{img.style.setProperty('--dragX','0px');}isDown=false;}
+wrap.addEventListener('touchstart',start,{passive:true});wrap.addEventListener('touchmove',move,{passive:true});wrap.addEventListener('touchend',end);
+wrap.addEventListener('mousedown',start);window.addEventListener('mousemove',move);window.addEventListener('mouseup',end);
+wrap.addEventListener('click',()=>{if(!isDown)showFrame(frame+1,1);});
+updateDots();render();
 })();
 </script>
 </body>

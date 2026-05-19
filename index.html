@@ -35,7 +35,8 @@ h1{font-size:72px;line-height:0.95;font-weight:900;margin-bottom:24px;}.gold{col
 .product-wrap::after{content:"360° TOUCH VIEW";position:absolute;right:54px;bottom:42px;font-size:12px;letter-spacing:3px;font-weight:800;color:rgba(214,192,109,0.78);z-index:3;}
 .glow{position:absolute;width:420px;height:420px;background:#34d399;border-radius:50%;filter:blur(120px);opacity:0.22;z-index:0;}
 .rotate-stage{position:relative;z-index:2;width:min(92%,520px);height:560px;display:flex;align-items:center;justify-content:center;transform-style:preserve-3d;}
-.hero-product{position:relative;z-index:2;display:block;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,0.14),rgba(255,255,255,0.03));padding:18px;box-shadow:0 45px 90px rgba(0,0,0,0.48),0 18px 34px rgba(0,0,0,0.28),0 0 0 1px rgba(255,255,255,0.12),inset 0 1px 0 rgba(255,255,255,0.24);filter:drop-shadow(22px 30px 28px rgba(0,0,0,0.38)) saturate(1.08) contrast(1.04);transform:rotateY(var(--rotateY,-10deg)) rotateX(var(--rotateX,5deg)) rotateZ(var(--rotateZ,-1deg)) scaleX(var(--scaleX,1));transition:transform .08s linear, filter .18s ease;}
+.hero-product{position:relative;z-index:2;display:block;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,0.14),rgba(255,255,255,0.03));padding:18px;box-shadow:0 45px 90px rgba(0,0,0,0.48),0 18px 34px rgba(0,0,0,0.28),0 0 0 1px rgba(255,255,255,0.12),inset 0 1px 0 rgba(255,255,255,0.24);filter:drop-shadow(22px 30px 28px rgba(0,0,0,0.38)) saturate(1.08) contrast(1.04);transform:rotateY(var(--rotateY,-6deg)) rotateX(var(--rotateX,4deg)) rotateZ(var(--rotateZ,0deg)) scaleX(var(--scaleX,1));transition:opacity .18s ease, transform .16s ease, filter .18s ease;}
+.hero-product.is-changing{opacity:.72;filter:blur(.4px) drop-shadow(22px 30px 28px rgba(0,0,0,0.38)) saturate(1.08) contrast(1.04);}
 .rotate-shadow{position:absolute;z-index:1;bottom:24px;width:58%;height:34px;border-radius:50%;background:rgba(0,0,0,.46);filter:blur(18px);transform:rotateX(78deg) translateZ(-30px);}
 .rotate-hint{position:absolute;left:50%;bottom:82px;transform:translateX(-50%);z-index:4;padding:9px 14px;border-radius:999px;background:rgba(8,18,13,.72);border:1px solid rgba(214,192,109,.32);color:#f5e7a6;font-size:13px;font-weight:700;white-space:nowrap;backdrop-filter:blur(10px);pointer-events:none;}
 .rotate-dots{position:absolute;left:50%;bottom:56px;transform:translateX(-50%);z-index:4;display:flex;gap:7px;pointer-events:none;}.rotate-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.28);}.rotate-dots span.active{background:#d6c06d;box-shadow:0 0 16px rgba(214,192,109,.9);}
@@ -56,40 +57,50 @@ h1{font-size:72px;line-height:0.95;font-weight:900;margin-bottom:24px;}.gold{col
 <div class="glow"></div>
 <div class="rotate-stage">
 <div class="rotate-shadow"></div>
-<img src="E8E82679-4BB8-4F43-A379-1713358C2DD7.png" class="hero-product" id="heroProduct" alt="RAPTOR Herbal Roll-On Sport Premium">
+<img src="product-front.png" class="hero-product" id="heroProduct" alt="RAPTOR Herbal Roll-On Sport Premium">
 </div>
 <div class="rotate-hint">ปัดซ้าย-ขวา เพื่อหมุนสินค้า 360°</div>
-<div class="rotate-dots"><span class="active"></span><span></span><span></span><span></span><span></span></div>
+<div class="rotate-dots" id="rotateDots"></div>
 </div>
 </section>
-<section class="section" id="why-raptor"><div class="section-title"><p>WHY RAPTOR</p><h2>ทำไมต้อง RAPTOR</h2></div><div class="cards"><div class="card"><h3>Sport Premium Look</h3><p>ดีไซน์แบรนด์ให้ดูสปอร์ตพรีเมี่ยม โดดเด่นทั้งหน้าร้านและออนไลน์ เหมาะกับสายฟิตเนสและสุขภาพ</p></div><div class="card"><h3>Herbal Cooling Relief</h3><p>สัมผัสเย็นสดชื่นจากสมุนไพร ใช้ง่ายด้วยหัวโรลออน ช่วยผ่อนคลายหลังออกกำลังกายหรือกิจกรรมหนัก</p></div><div class="card"><h3>Ready to Scale</h3><p>พร้อมต่อยอดการขายผ่าน TikTok, Facebook และ Marketplace พร้อมภาพลักษณ์แบรนด์ที่น่าเชื่อถือ</p></div></div><div class="detail-proof"><div class="detail-image"><img src="E8E82679-4BB8-4F43-A379-1713358C2DD7.png" alt="ภาพสินค้า RAPTOR Herbal Roll-On ระยะใกล้ แสดงฉลากและหัวโรลออนชัดเจน"></div><div class="trust-card"><h3>รายละเอียดที่ช่วยเพิ่มความน่าเชื่อถือ</h3><ul class="trust-list"><li>ภาพสินค้าจริงหน้าฉลากชัดเจน พร้อมชื่อแบรนด์และประเภทสินค้า</li><li>รูปแบบบรรจุภัณฑ์แบบโรลออน ใช้งานสะดวก เหมาะกับสายออกกำลังกาย</li><li>มีช่องทางสั่งซื้อและติดต่อแบรนด์โดยตรงผ่าน LINE Official</li><li>แนวทางแบรนด์เน้น Sport + Herbal ชัดเจน ทั้งภาพลักษณ์และข้อความสินค้า</li></ul><div class="review-note">คะแนนรีวิวจากลูกค้า (อัปเดตล่าสุด): ★★★★★ 4.8/5 จากผู้ใช้งานที่สั่งซื้อซ้ำ</div></div></div></section>
+<section class="section" id="why-raptor"><div class="section-title"><p>WHY RAPTOR</p><h2>ทำไมต้อง RAPTOR</h2></div><div class="cards"><div class="card"><h3>Sport Premium Look</h3><p>ดีไซน์แบรนด์ให้ดูสปอร์ตพรีเมี่ยม โดดเด่นทั้งหน้าร้านและออนไลน์ เหมาะกับสายฟิตเนสและสุขภาพ</p></div><div class="card"><h3>Herbal Cooling Relief</h3><p>สัมผัสเย็นสดชื่นจากสมุนไพร ใช้ง่ายด้วยหัวโรลออน ช่วยผ่อนคลายหลังออกกำลังกายหรือกิจกรรมหนัก</p></div><div class="card"><h3>Ready to Scale</h3><p>พร้อมต่อยอดการขายผ่าน TikTok, Facebook และ Marketplace พร้อมภาพลักษณ์แบรนด์ที่น่าเชื่อถือ</p></div></div><div class="detail-proof"><div class="detail-image"><img src="product-front.png" alt="ภาพสินค้า RAPTOR Herbal Roll-On ด้านหน้า"></div><div class="trust-card"><h3>รายละเอียดที่ช่วยเพิ่มความน่าเชื่อถือ</h3><ul class="trust-list"><li>ภาพสินค้าจริงหน้าฉลากชัดเจน พร้อมชื่อแบรนด์และประเภทสินค้า</li><li>รูปแบบบรรจุภัณฑ์แบบโรลออน ใช้งานสะดวก เหมาะกับสายออกกำลังกาย</li><li>มีช่องทางสั่งซื้อและติดต่อแบรนด์โดยตรงผ่าน LINE Official</li><li>แนวทางแบรนด์เน้น Sport + Herbal ชัดเจน ทั้งภาพลักษณ์และข้อความสินค้า</li></ul><div class="review-note">คะแนนรีวิวจากลูกค้า (อัปเดตล่าสุด): ★★★★★ 4.8/5 จากผู้ใช้งานที่สั่งซื้อซ้ำ</div></div></div></section>
 <section class="member-section" id="member"><div class="member-card"><div><h2>สมัครสมาชิก RAPTOR Club</h2><p>รับโปรสมาชิกก่อนใคร โค้ดส่วนลดพิเศษ และคอนเทนต์ดูแลร่างกายสำหรับสายสปอร์ตทุกสัปดาห์</p><ul class="member-list"><li>ส่วนลดพิเศษสำหรับการสั่งซื้อครั้งแรก</li><li>แจ้งโปร Flash Sale แบบทันที</li><li>เทคนิคฟื้นฟูกล้ามเนื้อหลังซ้อม</li></ul></div><form class="signup-form" action="https://formspree.io/f/xjgzvoqy" method="POST"><input type="hidden" name="_subject" value="RAPTOR Club signup from landing page"><input type="text" name="name" placeholder="ชื่อ - นามสกุล" autocomplete="name" required><input type="email" name="email" placeholder="อีเมล" autocomplete="email" required><input type="tel" name="phone" placeholder="เบอร์โทรศัพท์" autocomplete="tel" required><button type="submit" class="btn btn-primary">สมัครสมาชิก</button></form></div></section>
 <section class="cta"><h2>พร้อมลุยทุกกิจกรรมกับ RAPTOR</h2><p>สั่งซื้อ RAPTOR Herbal Roll-On วันนี้ เพื่อสัมผัสความสดชื่นแบบสปอร์ตพรีเมี่ยม</p><a href="https://lin.ee/X56gq67" target="_blank" rel="noopener noreferrer" class="btn btn-primary">สั่งซื้อเลย</a></section>
 <script>
 (function(){
+const frames=['product-front.png','product-left-front.png'];
 const wrap=document.getElementById('product360');
 const img=document.getElementById('heroProduct');
-const dots=[...document.querySelectorAll('.rotate-dots span')];
-let dragging=false,startX=0,angle=-10,auto=0,raf=null;
+const dotsBox=document.getElementById('rotateDots');
+frames.forEach((src)=>{const preload=new Image();preload.src=src;const dot=document.createElement('span');dotsBox.appendChild(dot);});
+const dots=[...dotsBox.querySelectorAll('span')];
+let dragging=false,startX=0,frame=0,angle=-6,auto=0,changeLock=false;
+function setFrame(next){
+next=((next%frames.length)+frames.length)%frames.length;
+if(next===frame)return;
+frame=next;
+img.classList.add('is-changing');
+window.setTimeout(()=>{img.src=frames[frame];dots.forEach((d,i)=>d.classList.toggle('active',i===frame));},70);
+window.setTimeout(()=>img.classList.remove('is-changing'),180);
+}
 function render(){
 const y=angle;
-const x=5+Math.sin(y*Math.PI/180)*3;
-const z=Math.sin(y*Math.PI/90)*1.5;
-const sx=0.86+Math.abs(Math.cos(y*Math.PI/180))*0.18;
+const x=4+Math.sin(y*Math.PI/180)*2;
+const z=Math.sin(y*Math.PI/90)*1.2;
+const sx=frame===0?1:0.96;
 img.style.setProperty('--rotateY',y+'deg');
 img.style.setProperty('--rotateX',x+'deg');
 img.style.setProperty('--rotateZ',z+'deg');
 img.style.setProperty('--scaleX',sx.toFixed(3));
-const index=Math.abs(Math.round((((y%360)+360)%360)/72))%5;
-dots.forEach((d,i)=>d.classList.toggle('active',i===index));
+dots.forEach((d,i)=>d.classList.toggle('active',i===frame));
 }
-function animate(){if(!dragging){auto+=0.25;angle=-10+Math.sin(auto/42)*18;render();}raf=requestAnimationFrame(animate);}
-function down(e){dragging=true;startX=(e.touches?e.touches[0].clientX:e.clientX);wrap.setPointerCapture&&e.pointerId&&wrap.setPointerCapture(e.pointerId);}
-function move(e){if(!dragging)return;e.preventDefault();const x=(e.touches?e.touches[0].clientX:e.clientX);const dx=x-startX;startX=x;angle+=dx*0.75;render();}
+function animate(){if(!dragging){auto+=0.22;angle=(frame===0?-6:-18)+Math.sin(auto/45)*5;render();}requestAnimationFrame(animate);}
+function down(e){dragging=true;startX=(e.touches?e.touches[0].clientX:e.clientX);}
+function move(e){if(!dragging)return;e.preventDefault();const x=(e.touches?e.touches[0].clientX:e.clientX);const dx=x-startX;angle+=dx*.35;if(Math.abs(dx)>26&&!changeLock){setFrame(frame+(dx<0?1:-1));changeLock=true;window.setTimeout(()=>changeLock=false,220);}startX=x;render();}
 function up(){dragging=false;}
 wrap.addEventListener('mousedown',down);window.addEventListener('mousemove',move,{passive:false});window.addEventListener('mouseup',up);
 wrap.addEventListener('touchstart',down,{passive:true});wrap.addEventListener('touchmove',move,{passive:false});wrap.addEventListener('touchend',up);
-render();animate();
+setFrame(0);render();animate();
 })();
 </script>
 </body>

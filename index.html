@@ -14,7 +14,7 @@
 <script>
 (function(){
 const frames=['E8E82679-4BB8-4F43-A379-1713358C2DD7.png'];
-const optional=['product-front.png','product-left-front.png'];
+const optional=['021FCB00-102C-47DB-9664-E30573146EE5.png','E7BCE3F2-80AA-4FA7-B890-519B13776FE7.png','product-front.png','product-left-front.png'];
 const wrap=document.getElementById('product360'),img=document.getElementById('heroProduct'),dotsBox=document.getElementById('rotateDots'),hint=document.getElementById('rotateHint');
 let frame=0,down=false,startX=0,lastX=0,moved=false;
 function rebuildDots(){dotsBox.innerHTML='';frames.forEach(()=>{const s=document.createElement('span');dotsBox.appendChild(s)});paintDots()}
@@ -26,11 +26,8 @@ function end(){if(!down)return;img.style.transition='opacity .18s ease,transform
 optional.forEach(src=>{const test=new Image();test.onload=()=>{if(!frames.includes(src)){frames.push(src);rebuildDots();hint.textContent='มุมที่ 1 / '+frames.length}};test.src=src});
 wrap.addEventListener('pointerdown',e=>{e.preventDefault();try{wrap.setPointerCapture(e.pointerId)}catch(err){}start(e.clientX)});
 wrap.addEventListener('pointermove',e=>{e.preventDefault();move(e.clientX)});
-wrap.addEventListener('pointerup',e=>{e.preventDefault();end()});
-wrap.addEventListener('pointercancel',end);
-wrap.addEventListener('click',e=>{e.preventDefault();show(frame+1,1)});
-img.onerror=function(){img.src='E8E82679-4BB8-4F43-A379-1713358C2DD7.png'};
-rebuildDots();hint.textContent='มุมที่ 1 / '+frames.length;
+wrap.addEventListener('pointerup',e=>{e.preventDefault();end()});wrap.addEventListener('pointercancel',end);wrap.addEventListener('click',e=>{e.preventDefault();show(frame+1,1)});
+img.onerror=function(){img.src='E8E82679-4BB8-4F43-A379-1713358C2DD7.png'};rebuildDots();hint.textContent='มุมที่ 1 / '+frames.length;
 })();
 </script>
 </body></html>
